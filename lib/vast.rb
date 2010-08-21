@@ -1,4 +1,6 @@
 require 'vast/document'
+require 'vast/ad'
+require 'vast/creative'
 
 # This module wraps VAST documents, as outlined by the IAB at http://www.iab.net/media/file/VAST-2_0-FINAL.pdf
 module VAST
@@ -7,5 +9,11 @@ module VAST
   
   # Raised when parsing a VAST document that does not conform to the VAST spec XSD
   class InvalidDocumentError < StandardError; end
+  
+  # Raised when parsing a VAST ad node that is not complete
+  class InvalidAdError < StandardError; end
+  
+  # Raised when parsing a VAST creative node that is not complete
+  class InvalidCreativeError < StandardError; end
   
 end

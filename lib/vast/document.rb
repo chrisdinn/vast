@@ -12,5 +12,22 @@ module VAST
       xsd = Nokogiri::XML::Schema(File.read(VAST_SCHEMA_XSD_FILE))
       xsd.valid?(self)
     end
+    
+    # All ads in the document
+    def ads
+      self.root.xpath('.//Ad').to_a.collect do |node|
+        Ad.create(node)
+      end
+    end
+    
+    # All inline ads
+    def inline_ads
+      ads.select{ |ad| ad.kind_of?(VAST::InlineAd) }
+    end
+    
+    # All wrapper ads
+    def wrapper_ads
+      ads.select{ |ad| ad.kind_of?(VAST::WrapperAd) }
+    end
   end
 end
