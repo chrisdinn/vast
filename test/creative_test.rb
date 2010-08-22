@@ -46,4 +46,14 @@ class CreativeTest < Test::Unit::TestCase
     end
   end
   
+  def test_should_know_its_ad
+    document_with_creative = example_file('document_with_one_inline_ad.xml')
+    document = VAST::Document.parse!(document_with_creative)
+    creative = VAST::Creative.create(document.root.at('Creative'))
+    
+    assert creative.ad.kind_of?(VAST::Ad), "Creative should know it's Ad"
+    assert_equal creative.source_node.ancestors('Ad').first[:id], creative.ad.id
+  end
+  
+  
 end

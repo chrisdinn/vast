@@ -39,6 +39,14 @@ class AdTest < Test::Unit::TestCase
     end
   end
   
+  def test_ad_should_know_its_id
+    document_file = example_file('document_with_one_inline_ad.xml')
+    document = VAST::Document.parse!(document_file)
+    ad = document.inline_ads.first
+    
+    assert_equal "601364", ad.id
+  end
+  
   def test_add_with_creatives
     document_with_three_creatives = example_file('document_with_one_inline_ad.xml')
     document = VAST::Document.parse!(document_with_three_creatives)
@@ -81,5 +89,14 @@ class AdTest < Test::Unit::TestCase
     ad.companion_creatives.each do |creative|
       assert creative.kind_of?(VAST::CompanionCreative)
     end
+  end
+
+  def test_ad_should_know_its_main_impression
+    document_file = example_file('document_with_one_inline_ad.xml')
+    document = VAST::Document.parse!(document_file)
+    ad = document.inline_ads.first
+    
+    assert ad.impression.kind_of?(URI)
+    assert_equal "http://myTrackingURL/impression", ad.impression.to_s
   end
 end

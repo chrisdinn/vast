@@ -18,6 +18,10 @@ module VAST
         raise InvalidCreativeError
       end
     end
+    
+    def ad
+      Ad.create @source_node.ancestors('Ad').first
+    end
   end
   
   class LinearCreative < Creative; end

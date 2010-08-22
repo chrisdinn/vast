@@ -8,13 +8,17 @@ module VAST
     
     # Create proper ad type
     def self.create(node)
-      if node.at('.//InLine')
+      if node.at('InLine')
         InlineAd.new(node)
-      elsif node.at('.//Wrapper')
+      elsif node.at('Wrapper')
         WrapperAd.new(node)
       else
         raise InvalidAdError
       end
+    end
+    
+    def id
+      @source_node[:id]
     end
     
     def creatives
@@ -33,6 +37,11 @@ module VAST
     
     def companion_creatives
       creatives.select{ |creative| creative.kind_of?(CompanionCreative)  }
+    end
+    
+    # Each Ad should contain at least one impression.
+    def impression
+      URI.parse(@source_node.at('Impression').content)
     end
   end
   

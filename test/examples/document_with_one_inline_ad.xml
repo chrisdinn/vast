@@ -8,7 +8,8 @@
 	    <Description>VAST 2.0 Instream Test 1</Description>
 	    <Error>http://myErrorURL/error</Error>
 
-	    <Impression>http://myTrackingURL/impression</Impression>
+	    <Impression id="first">http://myTrackingURL/impression</Impression>
+	    <Impression id="second">http://myTrackingURL/anotherImpression</Impression>
 		<Creatives>
 			<Creative AdID="601364">
 				<Linear>
@@ -60,7 +61,7 @@
    				</NonLinearAds>
 			</Creative>
 		</Creatives>
-	  </InLine>
+	   </InLine>
 	  </Ad>
 	
 </VAST>
