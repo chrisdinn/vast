@@ -39,23 +39,14 @@ class AdTest < Test::Unit::TestCase
     end
   end
   
-  def test_ad_should_know_its_id
+  def test_ad_should_know_attributes
     document_file = example_file('document_with_one_inline_ad.xml')
     document = VAST::Document.parse!(document_file)
     ad = document.inline_ads.first
     
     assert_equal "601364", ad.id
-  end
-  
-  def test_add_with_creatives
-    document_with_three_creatives = example_file('document_with_one_inline_ad.xml')
-    document = VAST::Document.parse!(document_with_three_creatives)
-    ad = document.inline_ads.first
-    
-    assert_equal 3, ad.creatives.count
-    ad.creatives.each do |creative|
-      assert creative.kind_of?(VAST::Creative)
-    end
+    assert_equal "Acudeo Compatible", ad.ad_system
+    assert_equal URI.parse('http://myErrorURL/error'), ad.error_url
   end
   
   def test_ad_should_know_linear_creatives
@@ -85,7 +76,7 @@ class AdTest < Test::Unit::TestCase
     document = VAST::Document.parse!(document_file)
     ad = document.inline_ads.first
     
-    assert_equal 1, ad.companion_creatives.count
+    assert_equal 2, ad.companion_creatives.count
     ad.companion_creatives.each do |creative|
       assert creative.kind_of?(VAST::CompanionCreative)
     end
@@ -98,5 +89,15 @@ class AdTest < Test::Unit::TestCase
     
     assert ad.impression.kind_of?(URI)
     assert_equal "http://myTrackingURL/impression", ad.impression.to_s
+  end
+  
+  def test_ad_should_know_its_impressions
+    document_with_two_impressions = example_file('document_with_one_inline_ad.xml')
+    document = VAST::Document.parse!(document_with_two_impressions)
+    ad = document.inline_ads.first
+    
+    assert_equal 2, ad.impressions.count
+    assert_equal "http://myTrackingURL/impression", ad.impressions.first.to_s
+    assert_equal "http://myTrackingURL/anotherImpression", ad.impressions.last.to_s
   end
 end

@@ -1,13 +1,20 @@
 module VAST
   class Document < Nokogiri::XML::Document
-    # Raises InvalidDocumentError if document doesnot conform to VAST Schema XSD
+    
+    # Parse a VAST XML document
+    def self.parse(*args)
+      super(*args)
+    end
+    
+    # Same as parse, but raises InvalidDocumentError if document is not valid
     def self.parse!(*args)
       document = parse(*args)
       raise InvalidDocumentError unless document.valid?
       document
     end
     
-    # Checks whether document conforms to VAST Schema XSD 
+    # Checks whether document conforms to the VAST XML Schema Definitions, accessible at
+    # http://www.iab.net/iab_products_and_industry_services/508676/digitalvideo/vast
     def valid?
       xsd = Nokogiri::XML::Schema(File.read(VAST_SCHEMA_XSD_FILE))
       xsd.valid?(self)

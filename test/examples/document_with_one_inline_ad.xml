@@ -6,32 +6,45 @@
 	    <AdSystem>Acudeo Compatible</AdSystem>
 	    <AdTitle>VAST 2.0 Instream Test 1</AdTitle>
 	    <Description>VAST 2.0 Instream Test 1</Description>
-	    <Error>http://myErrorURL/error</Error>
-
-	    <Impression id="first">http://myTrackingURL/impression</Impression>
-	    <Impression id="second">http://myTrackingURL/anotherImpression</Impression>
+        <Survey><![CDATA[http://mySurveyURL/survey]]></Survey>
+	    <Error><![CDATA[http://myErrorURL/error]]></Error>
+	    
+		<Impression id="first"><![CDATA[http://myTrackingURL/impression]]></Impression>
+	    <Impression id="second"><![CDATA[http://myTrackingURL/anotherImpression]]></Impression>
 		<Creatives>
-			<Creative AdID="601364">
+			<Creative id="6012" AdID="601364" sequence="1">
 				<Linear>
 					<Duration>00:00:30</Duration>
 					<TrackingEvents>
-						<Tracking event="creativeView">http://myTrackingURL/creativeView</Tracking>
+						<Tracking event="creativeView"><![CDATA[http://myTrackingURL/creativeView]]></Tracking>
 
-						<Tracking event="start">http://myTrackingURL/start</Tracking>
-						<Tracking event="midpoint">http://myTrackingURL/midpoint</Tracking>
-						<Tracking event="firstQuartile">http://myTrackingURL/firstQuartile</Tracking>
-						<Tracking event="thirdQuartile">http://myTrackingURL/thirdQuartile</Tracking>
-						<Tracking event="complete">http://myTrackingURL/complete</Tracking>
+						<Tracking event="start"><![CDATA[http://myTrackingURL/start]]></Tracking>
+						<Tracking event="midpoint"><![CDATA[http://myTrackingURL/midpoint]]></Tracking>
+						<Tracking event="firstQuartile"><![CDATA[http://myTrackingURL/firstQuartile]]></Tracking>
+						<Tracking event="thirdQuartile"><![CDATA[http://myTrackingURL/thirdQuartile]]></Tracking>
+						<Tracking event="complete"><![CDATA[http://myTrackingURL/complete]]></Tracking>
+						<Tracking event="mute"><![CDATA[http://myTrackingURL/mute]]></Tracking>
+						<Tracking event="unmute"><![CDATA[http://myTrackingURL/unmute]]></Tracking>
+						<Tracking event="pause"><![CDATA[http://myTrackingURL/pause]]></Tracking>
+						<Tracking event="rewind"><![CDATA[http://myTrackingURL/rewind]]></Tracking>
+						<Tracking event="resume"><![CDATA[http://myTrackingURL/resume]]></Tracking>
+						<Tracking event="fullscreen"><![CDATA[http://myTrackingURL/fullscreen]]></Tracking>
+						<Tracking event="expand"><![CDATA[http://myTrackingURL/expand]]></Tracking>
+						<Tracking event="collapse"><![CDATA[http://myTrackingURL/collapse]]></Tracking>
+						<Tracking event="acceptInvitation"><![CDATA[http://myTrackingURL/acceptInvitation]]></Tracking>
+						<Tracking event="close"><![CDATA[http://myTrackingURL/close]]></Tracking>
 					</TrackingEvents>
-
+					<AdParameters><![CDATA[params=for&request=gohere]]></AdParameters>
 					<VideoClicks>
-						<ClickThrough>http://www.tremormedia.com</ClickThrough>
-						<ClickTracking>http://myTrackingURL/click</ClickTracking>
+						<ClickThrough><![CDATA[http://www.tremormedia.com]]></ClickThrough>
+						<ClickTracking id="first"><![CDATA[http://myTrackingURL/click1]]></ClickTracking>
+						<ClickTracking id="second"><![CDATA[http://myTrackingURL/click2]]></ClickTracking>
+						<CustomClick id="customOne"><![CDATA[http://myTrackingURL/custom1]]></CustomClick>
+						<CustomClick id="customTwo"><![CDATA[http://myTrackingURL/custom2]]></CustomClick>
 					</VideoClicks>
 					<MediaFiles>
-						<MediaFile delivery="progressive" type="video/x-flv" bitrate="500" width="400" height="300" scalable="true" maintainAspectRatio="true">http://cdnp.tremormedia.com/video/acudeo/Carrot_400x300_500kb.flv</MediaFile>
+						<MediaFile delivery="progressive" type="video/x-flv" bitrate="500" width="400" height="300" scalable="true" maintainAspectRatio="true"><![CDATA[http://cdnp.tremormedia.com/video/acudeo/Carrot_400x300_500kb.flv]]></MediaFile>
 					</MediaFiles>
-
 				</Linear>
 			</Creative>
 			<Creative AdID="601364-Companion">
