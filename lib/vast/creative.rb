@@ -55,5 +55,4 @@ module VAST
   end
   
   class NonLinearCreative < Creative; end
-  class CompanionCreative < Creative; end
 end
