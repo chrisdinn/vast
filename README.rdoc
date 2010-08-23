@@ -1,4 +1,4 @@
-== /VAST
+= VAST
 
 A library for parsing Digital Video Ad Serving Template (VAST) documents, as outlined by the Interactive Advertising Bureau at 
 http://www.iab.net/iab_products_and_industry_services/508676/digitalvideo/vast. This library strives to be as true to the 
@@ -7,15 +7,37 @@ standard as possible, while presenting a Ruby-friendly interface.
 VAST outlines a standard document format for communication between digital video players and ad servers, including support for 
 multiple forms of creative and tracking support that conforms to the latest IAB standards.
 
-=== Installation
+== Installation
 
-/VAST is available as a RubyGem.  
+VAST is available as a RubyGem.  
 
-    gem install vast
+  gem install vast
 
-=== Usage
+== Usage
 
 Parse a VAST document and access it's contents easily. See the documentation for the individual classes for an overview of
 what information available for each class.
 
-    document = VAST::Document.parse(File.read("vast_document.xml"))
+  document = VAST::Document.parse(File.read("vast_document.xml"))
+
+== Documentation
+
+Read the rdoc at http://rdoc.info/projects/chrisdinn/vast
+
+== Problems/Bugs/Requests
+
+Please, file an issue.
+
+== Note on Patches/Pull Requests
+
+* Fork the project.
+* Make your feature addition or bug fix.
+* Add tests for it. This is important so I don't break it in a
+  future version unintentionally.
+* Commit, do not mess with rakefile, version, or history.
+  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
+* Send me a pull request. Bonus points for topic branches.
+
+== Copyright
+
+© 2010 Chris Dinn. See LICENSE for details.

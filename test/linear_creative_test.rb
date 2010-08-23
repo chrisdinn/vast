@@ -2,7 +2,7 @@ require 'test_helper'
 
 class LinearCreativeTest < Test::Unit::TestCase
   
-  def test_ad_should_know_attributes
+  def test_should_know_attributes
     document_file = example_file('document_with_one_inline_ad.xml')
     document = VAST::Document.parse!(document_file)
     creative = document.inline_ads.first.linear_creatives.first
@@ -15,6 +15,12 @@ class LinearCreativeTest < Test::Unit::TestCase
     assert_equal "http://myTrackingURL/custom2", creative.custom_click_urls[:custom_two].to_s
   end
   
-  
+  def test_should_have_mediafiles
+    document_file = example_file('document_with_one_inline_ad.xml')
+    document = VAST::Document.parse!(document_file)
+    creative = document.inline_ads.first.linear_creatives.first
+    
+    assert creative.mediafiles.first.kind_of?(VAST::Mediafile)
+  end
   
 end

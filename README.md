@@ -2,7 +2,7 @@ VAST
 =====
 
 A library for parsing Digital Video Ad Serving Template (VAST) documents, as outlined by the Interactive Advertising Bureau at 
-http://www.iab.net/iab_products_and_industry_services/508676/digitalvideo/vast. This library strives to be as true to the 
+[http://www.iab.net/iab_products_and_industry_services/508676/digitalvideo/vast]. This library strives to be as true to the 
 standard as possible, while presenting a Ruby-friendly interface.
 
 VAST outlines a standard document format for communication between digital video players and ad servers, including support for 
@@ -22,3 +22,24 @@ Parse a VAST document and access it's contents easily. See the documentation for
 what information available for each class.
 
     document = VAST::Document.parse(File.read("vast_document.xml"))
+
+Problems/Bugs/Requests
+-----------------------------
+
+Please, file an issue.
+
+Note on Patches/Pull Requests
+-----------------------------
+
+* Fork the project.
+* Make your feature addition or bug fix.
+* Add tests for it. This is important so I don't break it in a
+  future version unintentionally.
+* Commit, do not mess with rakefile, version, or history.
+  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
+* Send me a pull request. Bonus points for topic branches.
+
+Copyright
+-----------------------------
+
+© 2010 Chris Dinn. See [LICENSE](http://github.com/chrisdinn/vast/blob/master/LICENSE) for details.

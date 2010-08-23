@@ -29,5 +29,11 @@ module VAST
       end
       custom_click_urls
     end
+    
+    def mediafiles
+      @source_node.xpath('.//MediaFile').to_a.collect do |node|
+        Mediafile.new(node)
+      end
+    end
   end
 end

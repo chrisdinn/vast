@@ -43,7 +43,7 @@
 						<CustomClick id="customTwo"><![CDATA[http://myTrackingURL/custom2]]></CustomClick>
 					</VideoClicks>
 					<MediaFiles>
-						<MediaFile delivery="progressive" type="video/x-flv" bitrate="500" width="400" height="300" scalable="true" maintainAspectRatio="true"><![CDATA[http://cdnp.tremormedia.com/video/acudeo/Carrot_400x300_500kb.flv]]></MediaFile>
+						<MediaFile id="firstFile" delivery="progressive" type="video/x-flv" bitrate="500" width="400" height="300" scalable="true" maintainAspectRatio="true"><![CDATA[http://cdnp.tremormedia.com/video/acudeo/Carrot_400x300_500kb.flv]]></MediaFile>
 					</MediaFiles>
 				</Linear>
 			</Creative>
