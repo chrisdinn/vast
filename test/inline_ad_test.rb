@@ -11,15 +11,4 @@ class InlineAdTest < Test::Unit::TestCase
     assert_equal "VAST 2.0 Instream Test 1", inline_ad.ad_title
   end
 
-  def test_extensions
-    document_file = example_file('document_with_one_inline_ad.xml')
-    document = VAST::Document.parse!(document_file)
-    inline_ad = document.inline_ads.first
-    
-    assert_equal 2, inline_ad.extensions.count
-    inline_ad.extensions.each do |extension|
-      assert extension.kind_of?(VAST::Extension)
-    end
-  end
-
 end

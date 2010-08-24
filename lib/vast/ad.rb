@@ -54,7 +54,7 @@ module VAST
       end
     end
     
-    # Each Ad should contain at least one impression.
+    # Each Ad must contain at least one impression.
     def impression
       URI.parse(source_node.at('Impression').content)
     end
@@ -67,7 +67,11 @@ module VAST
       end
     end
     
+    # Extensions included in the 
+    def extensions
+      source_node.xpath('.//Extension').to_a.collect do |node|
+        Extension.new(node)
+      end
+    end
   end
-  
-  class WrapperAd < Ad; end
 end

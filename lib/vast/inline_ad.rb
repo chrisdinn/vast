@@ -11,12 +11,6 @@ module VAST
       source_node.at('AdTitle').content
     end
     
-    # Extensions included in the 
-    def extensions
-      source_node.xpath('.//Extension').to_a.collect do |node|
-        Extension.new(node)
-      end
-    end
   end
 end
 

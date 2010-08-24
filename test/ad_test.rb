@@ -100,4 +100,15 @@ class AdTest < Test::Unit::TestCase
     assert_equal "http://myTrackingURL/impression", ad.impressions.first.to_s
     assert_equal "http://myTrackingURL/anotherImpression", ad.impressions.last.to_s
   end
+
+  def test_extensions
+    document_file = example_file('document_with_one_inline_ad.xml')
+    document = VAST::Document.parse!(document_file)
+    ad = document.inline_ads.first
+    
+    assert_equal 2, ad.extensions.count
+    ad.extensions.each do |extension|
+      assert extension.kind_of?(VAST::Extension)
+    end
+  end
 end
