@@ -1,13 +1,8 @@
 module VAST
-  class Creative
-    attr_reader :source_node
-    
-    def initialize(node)
-      @source_node = node
-    end
+  class Creative < Element
     
     def ad
-      Ad.create @source_node.ancestors('Ad').first
+      Ad.create source_node.ancestors('Ad').first
     end
     
     def id
@@ -25,13 +20,13 @@ module VAST
     
     # Data to be passed into the video ad.
     def ad_parameters
-      @source_node.at('AdParameters').content
+      source_node.at('AdParameters').content
     end
     
     # Returns a hash, keyed by event name, containing an array of URIs to be called for each event.
     def tracking_urls
       tracking_urls = {}
-      @source_node.xpath('.//Tracking').to_a.collect do |node|
+      source_node.xpath('.//Tracking').to_a.collect do |node|
         underscored_name = underscore(node[:event])
         if tracking_urls[underscored_name.to_sym]
            tracking_urls[underscored_name.to_sym] << URI.parse(node.content)
@@ -55,7 +50,7 @@ module VAST
     private
     
     def creative_node
-      @source_node.ancestors('Creative').first
+      source_node.ancestors('Creative').first
     end
   end
 end

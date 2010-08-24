@@ -77,6 +77,20 @@
    				</NonLinearAds>
 			</Creative>
 		</Creatives>
+		<Extensions>
+            <Extension type="DART">
+                <AdServingData>
+                    <DeliveryData>
+                        <GeoData><![CDATA[ct=CA&st=ON&ac=905&zp=L6V1X9&bw=0&dma=1&city=1869]]></GeoData>
+                    </DeliveryData>
+                </AdServingData>
+            </Extension>
+            <Extension type="value">
+                <CostPerThousand currency="CAD">
+                   125.00
+                </CostPerThousand>
+            </Extension>
+        </Extensions>
 	   </InLine>
 	  </Ad>
 	
