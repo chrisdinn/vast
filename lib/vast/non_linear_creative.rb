@@ -1,26 +1,26 @@
 module VAST
-  class CompanionCreative < Creative
-    
+  class NonLinearCreative < Creative
+
     def id
       @source_node[:id]
     end
     
-    # Width in pixels of companion
+    # Width in pixels
     def width
       @source_node[:width].to_i
     end
     
-    # Height in pixels of companion
+    # Height in pixels
     def height
       @source_node[:height].to_i
     end
     
-    # Width in pixels of expanding companion ad when in expanded state  
+    # Width in pixels when in expanded state  
     def expanded_width
       @source_node[:expandedWidth].to_i
     end
     
-    # Height in pixels of expanding companion ad when in expanded state  
+    # Height in pixels when in expanded state  
     def expanded_height
       @source_node[:expandedHeight].to_i
     end
@@ -30,18 +30,29 @@ module VAST
       @source_node[:apiFramework]
     end
     
-    # URI to open as destination page when user clicks on the video
+    # URI to open as destination page when user clicks on creative
     def click_through_url
-      URI.parse @source_node.at('CompanionClickThrough').content
+      URI.parse @source_node.at('NonLinearClickThrough').content
     end
     
-    # Alternate text to be displayed when companion is rendered in HTML environment.
-    def alt_text
-      node = @source_node.at('AltText')
-      node.nil? ? nil : node.content
+    # Whether it is acceptable to scale the mediafile.
+    def scalable?
+      @source_node[:scalable]=="true"
     end
     
-    # Type of companion resource, returned as a symbol. Either :static, :iframe, or :html.
+    # Whether the mediafile must have its aspect ratio maintained when scaled
+    def maintain_aspect_ratio?
+      @source_node[:maintainAspectRatio]=="true"
+    end
+    
+    # Suggested duration to display non-linear ad, typically for animation to complete. 
+    # Expressed in standard time format hh:mm:ss  
+    def min_suggested_duration
+      @source_node[:minSuggestedDuration]
+    end
+    
+    
+    # Type of non-linear resource, returned as a symbol. Either :static, :iframe, or :html.
     def resource_type
       if @source_node.at('StaticResource')
         :static
@@ -75,5 +86,6 @@ module VAST
         @source_node.at('HTMLResource').content
       end
     end
+    
   end
 end

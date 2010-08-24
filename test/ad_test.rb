@@ -65,7 +65,7 @@ class AdTest < Test::Unit::TestCase
     document = VAST::Document.parse!(document_file)
     ad = document.inline_ads.first
     
-    assert_equal 1, ad.non_linear_creatives.count
+    assert_equal 2, ad.non_linear_creatives.count
     ad.non_linear_creatives.each do |creative|
       assert creative.kind_of?(VAST::NonLinearCreative)
     end

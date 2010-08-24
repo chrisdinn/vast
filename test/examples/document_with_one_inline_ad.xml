@@ -18,7 +18,8 @@
 					<TrackingEvents>
 						<Tracking event="creativeView"><![CDATA[http://myTrackingURL/creativeView]]></Tracking>
 
-						<Tracking event="start"><![CDATA[http://myTrackingURL/start]]></Tracking>
+						<Tracking event="start"><![CDATA[http://myTrackingURL/start1]]></Tracking>
+						<Tracking event="start"><![CDATA[http://myTrackingURL/start2]]></Tracking>
 						<Tracking event="midpoint"><![CDATA[http://myTrackingURL/midpoint]]></Tracking>
 						<Tracking event="firstQuartile"><![CDATA[http://myTrackingURL/firstQuartile]]></Tracking>
 						<Tracking event="thirdQuartile"><![CDATA[http://myTrackingURL/thirdQuartile]]></Tracking>
@@ -43,13 +44,13 @@
 						<CustomClick id="customTwo"><![CDATA[http://myTrackingURL/custom2]]></CustomClick>
 					</VideoClicks>
 					<MediaFiles>
-						<MediaFile id="firstFile" delivery="progressive" type="video/x-flv" bitrate="500" width="400" height="300" scalable="true" maintainAspectRatio="true"><![CDATA[http://cdnp.tremormedia.com/video/acudeo/Carrot_400x300_500kb.flv]]></MediaFile>
+						<MediaFile id="firstFile" delivery="progressive" type="video/x-flv" bitrate="500" width="400" height="300" scalable="true" maintainAspectRatio="true"  apiFramework="VPAID"><![CDATA[http://cdnp.tremormedia.com/video/acudeo/Carrot_400x300_500kb.flv]]></MediaFile>
 					</MediaFiles>
 				</Linear>
 			</Creative>
 			<Creative AdID="601364-Companion">
 				<CompanionAds>
-					<Companion id="big_box" width="300" height="250" expandedWidth="600" expandedHeight="500">
+					<Companion id="big_box" width="300" height="250" expandedWidth="600" expandedHeight="500" apiFramework="VPAID">
 						<StaticResource creativeType="image/jpeg">http://demo.tremormedia.com/proddev/vast/Blistex1.jpg</StaticResource>
 						<TrackingEvents>
 							<Tracking event="creativeView">http://myTrackingURL/firstCompanionCreativeView</Tracking>
@@ -65,10 +66,14 @@
 			</Creative>
 			<Creative AdID="601365">
 			   <NonLinearAds>
-           			<NonLinear width="300" height="50">
+           			<NonLinear id="special_overlay" width="300" height="50" expandedWidth="600" expandedHeight="500" apiFramework="VPAID" scalable="true" maintainAspectRatio="true">
            				<StaticResource creativeType="image/jpeg"><![CDATA[http://cdn.liverail.com/adasset/228/330/overlay.jpg]]></StaticResource>
-<NonLinearClickThrough><![CDATA[http://t3.liverail.com/?metric=clickthru&pos=1&pid=1331&coid=135&nid=0&cid=330&kid=228&vid=&amid=&cc=default&pp=&url=&cb=9185&x=&y=&xy=&redirect=http%3A%2F%2Fliverail.com%2F]]></NonLinearClickThrough>
-               		</NonLinear>	
+						<NonLinearClickThrough><![CDATA[http://t3.liverail.com]]></NonLinearClickThrough>
+               		</NonLinear>
+					<NonLinear width="728" height="90">
+						<IFrameResource><![CDATA[http://ad3.liverail.com/util/non_linear.php]]></IFrameResource>
+						<NonLinearClickThrough>http://www.tremormedia.com</NonLinearClickThrough>
+					</NonLinear>	
    				</NonLinearAds>
 			</Creative>
 		</Creatives>

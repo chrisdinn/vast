@@ -5,6 +5,7 @@ require 'vast/creative'
 require 'vast/linear_creative'
 require 'vast/mediafile'
 require 'vast/companion_creative'
+require 'vast/non_linear_creative'
 
 # This module wraps VAST documents, as outlined by the IAB at http://www.iab.net/media/file/VAST-2_0-FINAL.pdf
 module VAST

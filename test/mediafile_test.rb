@@ -13,6 +13,7 @@ class MediafileTest < Test::Unit::TestCase
     assert_equal 400, mediafile.width
     assert_equal 300, mediafile.height
     assert_equal 500, mediafile.bitrate
+    assert_equal "VPAID", mediafile.api_framework
     assert mediafile.scalable?
     assert mediafile.maintain_aspect_ratio?
   end

@@ -27,8 +27,8 @@ class CreativeTest < Test::Unit::TestCase
     document = VAST::Document.parse!(document_with_creative)
     creative = document.ads.first.linear_creatives.first
     
-    assert_equal "http://myTrackingURL/creativeView", creative.tracking_urls[:creative_view].to_s
-    assert_equal "http://myTrackingURL/start", creative.tracking_urls[:start].to_s
+    assert_equal ["http://myTrackingURL/creativeView"], creative.tracking_urls[:creative_view].collect{ |url| url.to_s }
+    assert_equal ["http://myTrackingURL/start1", "http://myTrackingURL/start2"], creative.tracking_urls[:start].collect{ |url| url.to_s }
     ## There are more tracking urls, refer to spec for complete list
   end
   

@@ -41,12 +41,17 @@ module VAST
       @source_node[:height].to_i
     end
     
-    # Whether it is acceptable to scale the image.
+    # Defines the method to use for communication with the companion
+    def api_framework
+      @source_node[:apiFramework]
+    end
+    
+    # Whether it is acceptable to scale the mediafile.
     def scalable?
       @source_node[:scalable]=="true"
     end
     
-    # Whether the ad must have its aspect ratio maintained when scaled
+    # Whether the mediafile must have its aspect ratio maintained when scaled
     def maintain_aspect_ratio?
       @source_node[:maintainAspectRatio]=="true"
     end

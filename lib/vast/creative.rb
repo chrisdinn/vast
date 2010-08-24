@@ -28,11 +28,16 @@ module VAST
       @source_node.at('AdParameters').content
     end
     
+    # Returns a hash, keyed by event name, containing an array of URIs to be called for each event.
     def tracking_urls
       tracking_urls = {}
       @source_node.xpath('.//Tracking').to_a.collect do |node|
         underscored_name = underscore(node[:event])
-        tracking_urls[underscored_name.to_sym] = URI.parse(node.content)
+        if tracking_urls[underscored_name.to_sym]
+           tracking_urls[underscored_name.to_sym] << URI.parse(node.content)
+        else
+           tracking_urls[underscored_name.to_sym] = [URI.parse(node.content)]
+        end
       end
       tracking_urls
     end
@@ -53,6 +58,4 @@ module VAST
       @source_node.ancestors('Creative').first
     end
   end
-  
-  class NonLinearCreative < Creative; end
 end
