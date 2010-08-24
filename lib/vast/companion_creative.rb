@@ -1,4 +1,6 @@
 module VAST
+  # Commonly text, display ads, rich media, or skins that wrap around the video experience. These ads come 
+  # in a number of sizes and shapes and typically run alongside or surrounding the video player.
   class CompanionCreative < Creative
     
     def id

@@ -1,4 +1,5 @@
 module VAST
+  # Contains all the information necessary to display the visual experience of one complete ad.
   class InlineAd < Ad
     
     # URI of request to survey vendor

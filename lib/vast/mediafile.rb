@@ -1,4 +1,6 @@
 module VAST
+  # Any number of Mediafile objects can be provided for a single Ad, but it is assumed that all Mediafiles belongs
+  # to a single Ad object represent the same creative unit with the same  duration, Ad-ID (ISCI code), etc.
   class Mediafile < Element
     
     # Location of linear file

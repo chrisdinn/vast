@@ -60,6 +60,14 @@ class AdTest < Test::Unit::TestCase
     end
   end
   
+  def test_ad_should_know_first_linear_creative
+    document_file = example_file('document_with_one_inline_ad.xml')
+    document = VAST::Document.parse!(document_file)
+    ad = document.inline_ads.first
+    
+    assert_equal ad.linear_creative.id, ad.linear_creatives.first.id
+  end
+  
   def test_ad_should_know_non_linear_creatives
     document_file = example_file('document_with_one_inline_ad.xml')
     document = VAST::Document.parse!(document_file)

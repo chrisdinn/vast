@@ -1,4 +1,5 @@
 module VAST
+  # A complete VAST document
   class Document < Nokogiri::XML::Document
     
     # Parse a VAST XML document
@@ -20,7 +21,11 @@ module VAST
       xsd.valid?(self)
     end
     
-    # All ads in the document
+    # A single VAST response may include multiple Ads from multiple advertisers. It will be up to the 
+    # Video Player to determine the order, timing, placement, etc for the multiple ads. However, the 
+    # player should generally respect the sequential order of the Ad elements within the ad.
+    #
+    # If no ads of any type are available, it would be indicated by the absence of any ads.
     def ads
       self.root.xpath('.//Ad').to_a.collect do |node|
         Ad.create(node)

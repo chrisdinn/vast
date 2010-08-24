@@ -1,4 +1,6 @@
 module VAST
+  # LinearCreative is presented before, in the middle of, or after the video content is consumed by the user, 
+  # in very much the same way a TV commercial can play before, during or after the chosen program.
   class LinearCreative < Creative
     
     # Duration of creative
@@ -30,6 +32,10 @@ module VAST
       custom_click_urls
     end
     
+    # Returns mediafiles containing the information required to display the linear creative's media
+    # 
+    # It is assumed that all mediafiles accessible represent the same creative unit with the same 
+    # duration, Ad-ID (ISCI code), etc.
     def mediafiles
       source_node.xpath('.//MediaFile').to_a.collect do |node|
         Mediafile.new(node)

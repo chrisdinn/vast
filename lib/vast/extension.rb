@@ -1,4 +1,6 @@
 module VAST
+  # The VAST allows any valid XML within the extensions element. Use of extensions will necessarily 
+  # require offline coordination between VAST sender and VAST receiver. 
   class Extension < Element
 
     # Extension type

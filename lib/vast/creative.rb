@@ -1,4 +1,10 @@
 module VAST
+  # Contains the information related to a piece of creative.
+  # 
+  # === Sequence
+  # The Creative element takes an optional “sequence” attribute that indicates the suggested order in which the 
+  # Creatives should be displayed. If two Creative elements are intended to be shown at the same time they should 
+  # share the same sequence number.
   class Creative < Element
     
     def ad

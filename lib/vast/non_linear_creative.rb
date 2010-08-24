@@ -1,4 +1,6 @@
 module VAST
+  # NonLinearCreative runs concurrently with the video content so the users see the ad while viewing 
+  # the content. Non-linear video ads can be delivered as text, graphical ads, or as video overlays.
   class NonLinearCreative < Creative
 
     def id

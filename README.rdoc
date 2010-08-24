@@ -1,11 +1,13 @@
 = VAST
 
-A library for parsing Digital Video Ad Serving Template (VAST) documents, as outlined by the Interactive Advertising Bureau at 
-http://www.iab.net/iab_products_and_industry_services/508676/digitalvideo/vast. This library strives to be as true to the 
-standard as possible, while presenting a Ruby-friendly interface.
+A library for parsing Digital Video Ad Serving Template (VAST) 2.0 XML documents, as outlined by the Interactive Advertising Bureau at 
+http://www.iab.net/iab_products_and_industry_services/508676/digitalvideo/vast. VAST outlines a standard document format for communication between digital video players and ad servers, including support for 
+multiple forms of creative and tracking support that conforms to the latest IAB standards. 
 
-VAST outlines a standard document format for communication between digital video players and ad servers, including support for 
-multiple forms of creative and tracking support that conforms to the latest IAB standards.
+It's recommended that you review the resources made available for the IAB. Whenever possible the documentation in this library has been 
+pulled directly from those resources.
+
+This library strives to be as true to the standard as possible, while presenting a Ruby-friendly interface.
 
 == Installation
 
@@ -15,10 +17,16 @@ VAST is available as a RubyGem.
 
 == Usage
 
-Parse a VAST document and access it's contents easily. See the documentation for the individual classes for an overview of
-what information available for each class.
+Parse a VAST document and access its contents using an easy-to-understand model. For example:
 
   document = VAST::Document.parse(File.read("vast_document.xml"))
+  inline_ad = document.inline_ads.first
+  puts inline_ad.linear_creative.mediafiles.first.type
+  => "video/x-flv"
+  puts inline_ad.linear_creative.mediafiles.first.url
+  => #<URI::HTTP:0x1015ad5f0 URL:http://creativeurl.ca/mediafile>
+
+See the documentation for the individual classes for an overview of what information available for each class.
 
 == Documentation
 
