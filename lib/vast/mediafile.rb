@@ -5,7 +5,7 @@ module VAST
     
     # Location of linear file
     def url
-      URI.parse source_node.content
+      URI.parse source_node.content.strip
     end
     
     def id

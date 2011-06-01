@@ -46,7 +46,7 @@ module VAST
     # Returns URI to request if ad does not play due to error.
     def error_url
       error_url_node = source_node.at("Error")
-      URI.parse(error_url_node.content) if error_url_node
+      URI.parse(error_url_node.content.strip) if error_url_node
     end
     
     # Returns an array containing all linear creatives.
@@ -78,14 +78,14 @@ module VAST
     
     # Each Ad must contain at least one impression.
     def impression
-      URI.parse(source_node.at('Impression').content)
+      URI.parse(source_node.at('Impression').content.strip)
     end
     
     # Array of all impressions available for this ad, excluding those specific
     # to a particular creative.
     def impressions
       source_node.xpath('.//Impression').to_a.collect do |node|
-        URI.parse(node)
+        URI.parse(node.content.strip)
       end
     end
     

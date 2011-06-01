@@ -12,7 +12,7 @@ module VAST
     
     # URI of ad tag of downstream Secondary Ad Server
     def ad_tag_url
-      URI.parse source_node.at('VASTAdTagURI').content
+      URI.parse source_node.at('VASTAdTagURI').content.strip
     end
     
   end
