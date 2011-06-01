@@ -4,7 +4,7 @@ module VAST
     
     # URI of request to survey vendor
     def survey_url
-      URI.parse source_node.at('Survey').content
+      URI.parse source_node.at('Survey').content.strip
     end
     
     # Common name of ad

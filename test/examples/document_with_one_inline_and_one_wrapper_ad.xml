@@ -7,7 +7,9 @@
 	    <Description>VAST 2.0 Instream Test 1</Description>
 	    <Error>http://myErrorURL/error</Error>
 
-	    <Impression>http://myTrackingURL/impression</Impression>
+	    <Impression>
+	      <![CDATA[http://myTrackingURL/impression]]>
+	    </Impression>
 		<Creatives>
 			<Creative AdID="601364">
 				<Linear>
@@ -15,7 +17,9 @@
 					<TrackingEvents>
 						<Tracking event="creativeView">http://myTrackingURL/creativeView</Tracking>
 
-						<Tracking event="start">http://myTrackingURL/start</Tracking>
+						<Tracking event="start">
+						  <![CDATA[http://myTrackingURL/start]]>
+						</Tracking>
 						<Tracking event="midpoint">http://myTrackingURL/midpoint</Tracking>
 						<Tracking event="firstQuartile">http://myTrackingURL/firstQuartile</Tracking>
 						<Tracking event="thirdQuartile">http://myTrackingURL/thirdQuartile</Tracking>
@@ -23,11 +27,15 @@
 					</TrackingEvents>
 
 					<VideoClicks>
-						<ClickThrough>http://www.tremormedia.com</ClickThrough>
+						<ClickThrough>
+						  <![CDATA[http://www.tremormedia.com]]>
+						</ClickThrough>
 						<ClickTracking>http://myTrackingURL/click</ClickTracking>
 					</VideoClicks>
 					<MediaFiles>
-						<MediaFile delivery="progressive" type="video/x-flv" bitrate="500" width="400" height="300" scalable="true" maintainAspectRatio="true">http://cdnp.tremormedia.com/video/acudeo/Carrot_400x300_500kb.flv</MediaFile>
+						<MediaFile delivery="progressive" type="video/x-flv" bitrate="500" width="400" height="300" scalable="true" maintainAspectRatio="true">
+						  <![CDATA[http://cdnp.tremormedia.com/video/acudeo/Carrot_400x300_500kb.flv]]>
+						</MediaFile>
 					</MediaFiles>
 
 				</Linear>
@@ -37,14 +45,18 @@
 					<Companion width="300" height="250">
 						<StaticResource creativeType="image/jpeg">http://demo.tremormedia.com/proddev/vast/Blistex1.jpg</StaticResource>
 						<TrackingEvents>
-							<Tracking event="creativeView">http://myTrackingURL/firstCompanionCreativeView</Tracking>
+							<Tracking event="creativeView">
+							  <![CDATA[http://myTrackingURL/firstCompanionCreativeView]]>
+							</Tracking>
 
 						</TrackingEvents>
 
 						<CompanionClickThrough>http://www.tremormedia.com</CompanionClickThrough>
 					</Companion>
 					<Companion width="728" height="90">
-						<StaticResource creativeType="image/jpeg">http://demo.tremormedia.com/proddev/vast/728x90_banner1.jpg</StaticResource>
+						<StaticResource creativeType="image/jpeg">
+						  <![CDATA[http://demo.tremormedia.com/proddev/vast/728x90_banner1.jpg]]>
+						</StaticResource>
 						<CompanionClickThrough>http://www.tremormedia.com</CompanionClickThrough>
 					</Companion>
 
@@ -57,7 +69,9 @@
 	  <Wrapper>
 	    <AdSystem>Acudeo Compatible</AdSystem>
 	    <VASTAdTagURI>http://demo.tremormedia.com/proddev/vast/vast_inline_linear.xml</VASTAdTagURI>
-	    <Impression>http://myTrackingURL/wrapper/impression</Impression>
+	    <Impression>
+	      <![CDATA[http://myTrackingURL/wrapper/impression]]>
+	    </Impression>
 		<Creatives>
 
 			<Creative AdID="602833">
@@ -70,7 +84,9 @@
 				<CompanionAds>
 					<Companion width="300" height="250">
 
-						<StaticResource creativeType="image/jpeg">http://demo.tremormedia.com/proddev/vast/300x250_banner1.jpg</StaticResource>
+						<StaticResource creativeType="image/jpeg">
+						  <![CDATA[http://demo.tremormedia.com/proddev/vast/300x250_banner1.jpg]]>
+						</StaticResource>
 						<TrackingEvents>
 							<Tracking event="creativeView">http://myTrackingURL/wrapper/firstCompanionCreativeView</Tracking>
 						</TrackingEvents>

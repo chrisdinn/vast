@@ -6,11 +6,19 @@
 	    <AdSystem>Acudeo Compatible</AdSystem>
 	    <AdTitle>VAST 2.0 Instream Test 1</AdTitle>
 	    <Description>VAST 2.0 Instream Test 1</Description>
-        <Survey><![CDATA[http://mySurveyURL/survey]]></Survey>
-	    <Error><![CDATA[http://myErrorURL/error]]></Error>
+        <Survey>
+          <![CDATA[http://mySurveyURL/survey]]>
+        </Survey>
+	    <Error>
+	      <![CDATA[http://myErrorURL/error]]>
+	    </Error>
 	    
-		<Impression id="first"><![CDATA[http://myTrackingURL/impression]]></Impression>
-	    <Impression id="second"><![CDATA[http://myTrackingURL/anotherImpression]]></Impression>
+		<Impression id="first">
+		  <![CDATA[http://myTrackingURL/impression]]>
+		</Impression>
+	  <Impression id="second">
+	    <![CDATA[http://myTrackingURL/anotherImpression]]>
+	  </Impression>
 		<Creatives>
 			<Creative id="6012" AdID="601364" sequence="1">
 				<Linear>
@@ -39,14 +47,18 @@
 					</TrackingEvents>
 					<AdParameters><![CDATA[params=for&request=gohere]]></AdParameters>
 					<VideoClicks>
-						<ClickThrough><![CDATA[http://www.tremormedia.com]]></ClickThrough>
+						<ClickThrough>
+						  <![CDATA[http://www.tremormedia.com]]>
+						</ClickThrough>
 						<ClickTracking id="first"><![CDATA[http://myTrackingURL/click1]]></ClickTracking>
 						<ClickTracking id="second"><![CDATA[http://myTrackingURL/click2]]></ClickTracking>
 						<CustomClick id="customOne"><![CDATA[http://myTrackingURL/custom1]]></CustomClick>
 						<CustomClick id="customTwo"><![CDATA[http://myTrackingURL/custom2]]></CustomClick>
 					</VideoClicks>
 					<MediaFiles>
-						<MediaFile id="firstFile" delivery="progressive" type="video/x-flv" bitrate="500" width="400" height="300" scalable="true" maintainAspectRatio="true"  apiFramework="VPAID"><![CDATA[http://cdnp.tremormedia.com/video/acudeo/Carrot_400x300_500kb.flv]]></MediaFile>
+						<MediaFile id="firstFile" delivery="progressive" type="video/x-flv" bitrate="500" width="400" height="300" scalable="true" maintainAspectRatio="true"  apiFramework="VPAID">
+						  <![CDATA[http://cdnp.tremormedia.com/video/acudeo/Carrot_400x300_500kb.flv]]>
+						</MediaFile>
 					</MediaFiles>
 				</Linear>
 			</Creative>
@@ -61,22 +73,32 @@
 						<AltText>Display this instead of the ad</AltText>
 					</Companion>
 					<Companion width="728" height="90">
-						<IFrameResource><![CDATA[http://ad3.liverail.com/util/companions.php]]></IFrameResource>
-						<CompanionClickThrough>http://www.tremormedia.com</CompanionClickThrough>
+						<IFrameResource>
+						  <![CDATA[http://ad3.liverail.com/util/companions.php]]>
+						</IFrameResource>
+						<CompanionClickThrough>
+						  http://www.tremormedia.com
+						</CompanionClickThrough>
 					</Companion>
 				</CompanionAds>
 			</Creative>
 			<Creative AdID="601365">
 			   <NonLinearAds>
            			<NonLinear id="special_overlay" width="300" height="50" expandedWidth="600" expandedHeight="500" apiFramework="VPAID" scalable="true" maintainAspectRatio="true">
-           				<StaticResource creativeType="image/jpeg"><![CDATA[http://cdn.liverail.com/adasset/228/330/overlay.jpg]]></StaticResource>
-						<NonLinearClickThrough><![CDATA[http://t3.liverail.com]]></NonLinearClickThrough>
-               		</NonLinear>
+           				<StaticResource creativeType="image/jpeg">
+           				  <![CDATA[http://cdn.liverail.com/adasset/228/330/overlay.jpg]]>
+           				</StaticResource>
+						<NonLinearClickThrough>
+						  <![CDATA[http://t3.liverail.com]]>
+						</NonLinearClickThrough>
+          </NonLinear>
 					<NonLinear width="728" height="90">
-						<IFrameResource><![CDATA[http://ad3.liverail.com/util/non_linear.php]]></IFrameResource>
+						<IFrameResource>
+						  <![CDATA[http://ad3.liverail.com/util/non_linear.php]]>
+						</IFrameResource>
 						<NonLinearClickThrough>http://www.tremormedia.com</NonLinearClickThrough>
 					</NonLinear>	
-   				</NonLinearAds>
+   			</NonLinearAds>
 			</Creative>
 		</Creatives>
 		<Extensions>
