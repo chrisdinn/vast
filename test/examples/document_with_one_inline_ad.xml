@@ -18,7 +18,9 @@
 					<TrackingEvents>
 						<Tracking event="creativeView"><![CDATA[http://myTrackingURL/creativeView]]></Tracking>
 
-						<Tracking event="start"><![CDATA[http://myTrackingURL/start1]]></Tracking>
+						<Tracking event="start">
+						  <![CDATA[http://myTrackingURL/start1]]>
+						</Tracking>
 						<Tracking event="start"><![CDATA[http://myTrackingURL/start2]]></Tracking>
 						<Tracking event="midpoint"><![CDATA[http://myTrackingURL/midpoint]]></Tracking>
 						<Tracking event="firstQuartile"><![CDATA[http://myTrackingURL/firstQuartile]]></Tracking>
