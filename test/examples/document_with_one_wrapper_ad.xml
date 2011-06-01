@@ -26,7 +26,9 @@
 				</Companion>
 				<Companion width="728" height="90">
 
-					<StaticResource creativeType="image/jpeg">http://demo.tremormedia.com/proddev/vast/728x90_banner1.jpg</StaticResource>
+					<StaticResource creativeType="image/jpeg">
+					  http://demo.tremormedia.com/proddev/vast/728x90_banner1.jpg
+					</StaticResource>
 					<CompanionClickThrough>http://www.tremormedia.com</CompanionClickThrough>
 				</Companion>
 			</CompanionAds>
