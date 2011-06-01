@@ -10,13 +10,13 @@ module VAST
     
     # URI to open as destination page when user clicks on the video
     def click_through_url
-      URI.parse source_node.at('ClickThrough').content
+      URI.parse source_node.at('ClickThrough').content.strip
     end
     
     # An array of URIs to request for tracking purposes when user clicks on the video
     def click_tracking_urls
       source_node.xpath('.//ClickTracking').to_a.collect do |node|
-        URI.parse node.content
+        URI.parse node.content.strip
       end
     end
     
@@ -27,7 +27,7 @@ module VAST
       custom_click_urls = {}
       source_node.xpath('.//CustomClick').to_a.collect do |node|
         key = underscore(node[:id]).to_sym
-        custom_click_urls[key] = URI.parse(node.content)
+        custom_click_urls[key] = URI.parse(node.content.strip)
       end
       custom_click_urls
     end

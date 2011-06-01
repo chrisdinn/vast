@@ -34,7 +34,7 @@ module VAST
     
     # URI to open as destination page when user clicks on the video
     def click_through_url
-      URI.parse source_node.at('CompanionClickThrough').content
+      URI.parse source_node.at('CompanionClickThrough').content.strip
     end
     
     # Alternate text to be displayed when companion is rendered in HTML environment.
@@ -65,9 +65,9 @@ module VAST
     def resource_url
       case resource_type
       when :static
-        URI.parse source_node.at('StaticResource').content
+        URI.parse source_node.at('StaticResource').content.strip
       when :iframe
-        URI.parse source_node.at('IFrameResource').content
+        URI.parse source_node.at('IFrameResource').content.strip
       end
     end
     
