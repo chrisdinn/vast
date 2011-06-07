@@ -4,7 +4,7 @@ $:.unshift lib unless $:.include?(lib)
 
 Gem::Specification.new do |s|
   s.name        = "vast"
-  s.version     = "1.0"
+  s.version     = "1.0.3"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Chris Dinn"]
   s.email       = ["chrisgdinn@gmail.com"]

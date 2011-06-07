@@ -1,3 +1,5 @@
+require 'nokogiri'
+
 require 'vast/document'
 require 'vast/element'
 require 'vast/ad'
