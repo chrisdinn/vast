@@ -1,7 +1,9 @@
 source :gemcutter
 
-gem 'nokogiri', "~>1.4.3"
+gem 'nokogiri', "~>1.5.5"
+gem 'pathological'
+gem 'rake'
 
 group :test do
- gem 'redgreen'
+ gem 'turn', :require => false
 end
