@@ -4,7 +4,7 @@ $:.unshift lib unless $:.include?(lib)
 
 Gem::Specification.new do |s|
   s.name        = "vast"
-  s.version     = "1.0.3"
+  s.version     = "1.0.4"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Chris Dinn"]
   s.email       = ["chrisgdinn@gmail.com"]
@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   
   s.files       = Dir['lib/*.rb'] + Dir['lib/*.xsd'] + Dir['lib/vast/*.rb'] + Dir['test/*.rb'] + Dir['test/examples/*.xml'] + %w(LICENSE README.rdoc)
   
-  s.add_dependency 'nokogiri', '~> 1.4.3'
+  s.add_dependency 'nokogiri', '~> 1.5.5'
   
   s.require_path = 'lib'
 end
