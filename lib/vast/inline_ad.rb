@@ -6,6 +6,11 @@ module VAST
     def survey_url
       URI.parse source_node.at('Survey').content.strip
     end
+
+    # Common name of ad
+    def ad_system
+      source_node.at('AdSystem').content
+    end
     
     # Common name of ad
     def ad_title
