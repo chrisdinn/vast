@@ -8,6 +8,7 @@ require 'vast/wrapper_ad'
 require 'vast/creative'
 require 'vast/linear_creative'
 require 'vast/mediafile'
+require 'vast/icon'
 require 'vast/companion_creative'
 require 'vast/non_linear_creative'
 require 'vast/extension'
@@ -16,7 +17,8 @@ require 'vast/extension'
 module VAST
   VAST_VERSION = 2.0
   VAST_SCHEMA_XSD_FILE = File.expand_path(File.join(File.dirname(__FILE__), 'vast_2.0.1.xsd'))
-  
+  VAST3_SCHEMA_XSD_FILE = File.expand_path(File.join(File.dirname(__FILE__), 'vast3_draft.xsd'))
+
   class VASTError < StandardError; end
   
   # Raised when parsing a VAST document that does not conform to the VAST spec XSD

@@ -36,6 +36,10 @@ module VAST
     def click_through_url
       URI.parse source_node.at('NonLinearClickThrough').content.strip
     end
+
+    def click_tracking_url
+      URI.parse source_node.at('NonLinearClickTracking').content.strip
+    end
     
     # Whether it is acceptable to scale the mediafile.
     def scalable?
