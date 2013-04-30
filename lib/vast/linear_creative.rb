@@ -8,6 +8,11 @@ module VAST
       source_node.at('Duration').content
     end
     
+    # VAST 3
+    def skipoffset
+      source_node[:skipoffset]
+    end
+    
     # URI to open as destination page when user clicks on the video
     def click_through_url
       URI.parse source_node.at('ClickThrough').content.strip
@@ -41,5 +46,12 @@ module VAST
         Mediafile.new(node)
       end
     end
+
+    def icons
+      source_node.xpath('.//Icon').to_a.collect do |node|
+        Icon.new(node)
+      end
+    end
+    
   end
 end

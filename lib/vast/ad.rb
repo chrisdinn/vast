@@ -32,6 +32,10 @@ module VAST
     def id
       source_node[:id]
     end
+
+    def sequence
+      source_node[:sequence]
+    end
     
     # Returns name of source ad server
     def ad_system
