@@ -1,6 +1,6 @@
 source :gemcutter
 
-gem 'nokogiri', "~>1.5.5"
+gem 'nokogiri', ">= 1.5.5"
 gem 'pathological'
 gem 'rake'
 
