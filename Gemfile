@@ -3,9 +3,10 @@ source "https://rubygems.org"
 gemspec
 
 # Used in Rakefile
-gem 'pathological'
+gem 'pathological' # adds '.' to $LOAD_PATH per Pathfile
 gem 'rake'
 
 group :test do
- gem 'turn', :require => false
+  # alternative runners for MiniTest, both colorful and informative.
+  gem 'turn', :require => false
 end
