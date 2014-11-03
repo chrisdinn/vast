@@ -9,11 +9,11 @@ Gem::Specification.new do |s|
   s.authors     = ["Chris Dinn"]
   s.email       = ["chrisgdinn@gmail.com"]
   s.homepage    = "http://github.com/chrisdinn/vast"
-  s.summary     = "A gem for working with VAST 2.0 documents" 
-  
+  s.summary     = "A gem for working with VAST 2.0 documents"
+
   s.files       = Dir['lib/*.rb'] + Dir['lib/*.xsd'] + Dir['lib/vast/*.rb'] + Dir['test/*.rb'] + Dir['test/examples/*.xml'] + %w(LICENSE README.rdoc)
-  
+
   s.add_dependency 'nokogiri', '~> 1.5.5'
-  
+
   s.require_path = 'lib'
 end

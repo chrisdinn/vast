@@ -1,6 +1,8 @@
-source :gemcutter
+source "https://rubygems.org"
 
-gem 'nokogiri', "~>1.5.5"
+gemspec
+
+# Used in Rakefile
 gem 'pathological'
 gem 'rake'
 
