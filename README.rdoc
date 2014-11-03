@@ -38,7 +38,7 @@ Please, file an issue.
 
 == Running Tests
 
-  rake test
+  bundle exec rake
 
 == Note on Patches/Pull Requests
 
