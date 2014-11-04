@@ -1,0 +1,15 @@
+language: ruby
+script: bundle exec rake
+rvm:
+  # 2.1, not 2.1.0 until fixed https://github.com/travis-ci/travis-ci/issues/2220
+  - 2.1
+  - 2.0.0
+  - 1.9.3
+  - 1.9.2
+  - jruby
+  - "rbx-2"
+matrix:
+  allow_failures:
+    - rvm: rbx-2
+    - rvm: 2.1
+  fast_finish: true

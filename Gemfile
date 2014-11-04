@@ -1,9 +1,12 @@
-source :gemcutter
+source "https://rubygems.org"
 
-gem 'nokogiri', "~>1.5.5"
-gem 'pathological'
+gemspec
+
+# Used in Rakefile
+gem 'pathological' # adds '.' to $LOAD_PATH per Pathfile
 gem 'rake'
 
 group :test do
- gem 'turn', :require => false
+  # alternative runners for MiniTest, both colorful and informative.
+  gem 'turn', :require => false
 end
