@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.email       = ["chrisgdinn@gmail.com"]
   s.homepage    = "http://github.com/chrisdinn/vast"
   s.summary     = "A gem for working with VAST 2.0 documents"
+  s.license     = "MIT"
 
   s.files       = Dir['lib/*.rb'] + Dir['lib/*.xsd'] + Dir['lib/vast/*.rb'] + Dir['test/*.rb'] + Dir['test/examples/*.xml'] + %w(LICENSE README.rdoc)
 
