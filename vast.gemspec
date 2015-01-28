@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
 
   s.files       = Dir['lib/*.rb'] + Dir['lib/*.xsd'] + Dir['lib/vast/*.rb'] + Dir['test/*.rb'] + Dir['test/examples/*.xml'] + %w(LICENSE README.rdoc)
 
-  s.add_dependency 'nokogiri', '~> 1.5.5'
+  s.add_dependency 'nokogiri', '~> 1.5'
 
   s.require_path = 'lib'
 end
