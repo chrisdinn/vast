@@ -5,9 +5,11 @@ gem 'pathological' # adds '.' to $LOAD_PATH per Pathfile
 gem 'rake'
 gem 'test-unit'
 
+gem 'nokogiri', '=1.5.0'
+
 group :test do
   # alternative runners for MiniTest, both colorful and informative.
   gem 'turn', :require => false
 end
 
-gemspec
+gemspec :path => "../"
