@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class InlineAdTest < Test::Unit::TestCase
+class Vast3InlineAdTest < Test::Unit::TestCase
 
   def test_ad_should_know_attributes
     document_file = example_file('vast3_inline.xml')
