@@ -1,6 +1,6 @@
-= VAST
+= VAST {<img src="https://travis-ci.org/chrisdinn/vast.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/chrisdinn/vast]
 
-A library for parsing Digital Video Ad Serving Template (VAST) 2.0 XML documents, as outlined by the Interactive Advertising Bureau at
+A library for parsing Digital Video Ad Serving Template (VAST) 2.0 and 3.0 XML documents, as outlined by the Interactive Advertising Bureau at
 http://www.iab.net/iab_products_and_industry_services/508676/digitalvideo/vast. VAST outlines a standard document format for communication between digital video players and ad servers, including support for
 multiple forms of creative and tracking support that conforms to the latest IAB standards.
 
@@ -49,6 +49,50 @@ Please, file an issue.
 * Commit, do not mess with rakefile, version, or history.
   (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
+
+== Release Instructions
+
+Install project development dependencies. The release process will use gem-release for version management.
+
+  bundle install
+
+Checkout the master branch; never release changes that haven't been merged to master.
+
+  git checkout master
+
+Create a release branch. Release branch names should match the pattern "v[0-9]+\.[0-9]+\.[0-9]+".
+
+  git checkout v1.0.5
+
+Bump the project version. By default the bump command will increment the patch version in the lib/vast/version.rb file, and commit the git change.
+
+  gem bump [patch|minor|major] --branch
+
+Modify the CHANGELOG.md file. Add the new version to the top of the file, and document all major changes.
+
+When done commit the changelog.
+
+  export BRANCH=$(git rev-parse --abbrev-ref HEAD)
+  git add CHANGELOG.md
+  git commit -m "CHANGELOG ${BRANCH}"
+
+Push your release branch to github.com
+
+  git push origin -u $BRANCH
+
+Open a new pull request from your branch to github.com:chrisdinn/vast@master
+
+Only a github user with write access to https://github.com/chrisdinn/vast can perform the remaining steps of the release.
+
+Review and merge the pull request to github.com:chrisdinn/vast@master
+
+Check Travis CI testing passed on the merge to master before continuing.
+
+Tag the release and push to rubygems.org using gem-release.
+
+  git checkout master
+  git pull origin
+  gem release --key $RUBYGEMS_API_KEY --tag --push
 
 == Copyright
 
