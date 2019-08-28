@@ -1,7 +1,15 @@
+require_relative 'resource.rb'
+
 module VAST
   # Commonly text, display ads, rich media, or skins that wrap around the video experience. These ads come 
   # in a number of sizes and shapes and typically run alongside or surrounding the video player.
   class CompanionCreative < Creative
+    include Resource
+
+    def initialize(node)
+      super(node)
+      after_initialize(node)
+    end
     
     def id
       source_node[:id]
@@ -41,41 +49,6 @@ module VAST
     def alt_text
       node = source_node.at('AltText')
       node.nil? ? nil : node.content
-    end
-    
-    # Type of companion resource, returned as a symbol. Either :static, :iframe, or :html.
-    def resource_type
-      if source_node.at('StaticResource')
-        :static
-      elsif source_node.at('IFrameResource')
-        :iframe
-      elsif source_node.at('HTMLResource')
-        :html
-      end
-    end
-    
-    # Returns MIME type of static creative
-    def creative_type
-      if resource_type == :static
-        source_node.at('StaticResource')[:creativeType]
-      end
-    end
-    
-    # Returns URI for static or iframe resource
-    def resource_url
-      case resource_type
-      when :static
-        URI.parse source_node.at('StaticResource').content.strip
-      when :iframe
-        URI.parse source_node.at('IFrameResource').content.strip
-      end
-    end
-    
-    # Returns HTML text for html resource
-    def resource_html
-      if resource_type == :html
-        source_node.at('HTMLResource').content
-      end
     end
   end
 end
