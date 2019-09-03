@@ -1,7 +1,15 @@
+require_relative 'resource.rb'
+
 module VAST
   # Any number of Mediafile objects can be provided for a single Ad, but it is assumed that all Mediafiles belongs
   # to a single Ad object represent the same creative unit with the same  duration, Ad-ID (ISCI code), etc.
   class Icon < Element
+    include VAST::Resource
+
+    def initialize(node)
+      super(node)
+      after_initialize(node)
+    end
     
     def program
       source_node[:program]
@@ -34,40 +42,6 @@ module VAST
     # Defines the method to use for communication with the companion
     def api_framework
       source_node[:apiFramework]
-    end
-
-    def resource_type
-      if source_node.at('StaticResource')
-        :static
-      elsif source_node.at('IFrameResource')
-        :iframe
-      elsif source_node.at('HTMLResource')
-        :html
-      end
-    end
-    
-    # Returns MIME type of static creative
-    def creative_type
-      if resource_type == :static
-        source_node.at('StaticResource')[:creativeType]
-      end
-    end
-
-    # Returns URI for static or iframe resource
-    def resource_url
-      case resource_type
-      when :static
-        URI.parse source_node.at('StaticResource').content.strip
-      when :iframe
-        URI.parse source_node.at('IFrameResource').content.strip
-      end
-    end
-    
-    # Returns HTML text for html resource
-    def resource_html
-      if resource_type == :html
-        source_node.at('HTMLResource').content
-      end
     end
 
     def click_through_url
