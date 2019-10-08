@@ -1,0 +1,48 @@
+---
+version: "2"
+checks:
+  argument-count:
+    config:
+      threshold: 4
+  complex-logic:
+    config:
+      threshold: 4
+  file-lines:
+    config:
+      threshold: 250
+  method-complexity:
+    config:
+      threshold: 5
+  method-count:
+    config:
+      threshold: 20
+  method-lines:
+    config:
+      threshold: 25
+  nested-control-flow:
+    config:
+      threshold: 4
+  return-statements:
+    config:
+      threshold: 4
+  # code climate uses a language-specific threshold for simalar and
+  # identical code.The overrides below affects all languages. The
+  # value 18 lines is the default threshold for Ruby.
+  similar-code:
+    config:
+      threshold: 18
+  identical-code:
+    config:
+      threshold: 18
+plugins:
+  flog:
+    enabled: true
+    config:
+      score_threshold: 20.0
+  git-legal:
+    enabled: true
+  reek:
+    enabled: true
+  rubocop:
+    enabled: true
+
